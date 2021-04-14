@@ -52,7 +52,6 @@ app.get('/find', (req, res) => {
         res.send(JSON.stringify(results))
     });
     connection.end();
-
 })
 
 
