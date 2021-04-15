@@ -7,7 +7,6 @@ app.get('/user', function (req, res) {
     // 向客户端响应数据
     res.send("欢迎访问用户接口")
 })
-
 app.get('/list', (req, res) => {
     //设置连接参数
     var connection = mysql.createConnection({
@@ -29,10 +28,6 @@ app.get('/list', (req, res) => {
     connection.end();
 
 })
-
-
-
-
 app.get('/find', (req, res) => {
     //设置连接参数
     var connection = mysql.createConnection({
@@ -53,9 +48,6 @@ app.get('/find', (req, res) => {
     });
     connection.end();
 })
-
-
-
 app.get('/', (req, res) => {
 
     const list = [
@@ -75,11 +67,9 @@ app.get('/', (req, res) => {
             age: 18
         }
     ]
-
     //将数组转为JSON字符串
     res.send(JSON.stringify(list))
 })
-
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
 })
