@@ -9,8 +9,8 @@ const port = 8080                       // 服务运行的端口
 var connection = mysql.createConnection({
     host     : 'localhost',
     user     : 'root',
-    password : 'root',
-    database : '2008'
+    password : '123456abc',
+    database : 'api2008'
 });
 
 
@@ -83,6 +83,7 @@ app.get('/user/detail',(req,res)=>{
     console.log(req.query)
     let uid = req.query.uid
     let sql = `select user_id,user_name,email,mobile from p_users where user_id=${uid}`
+
     connection.query(sql,function(err,result){
         res.send({
             errno: 0,
@@ -144,5 +145,5 @@ app.get('/cart/goods',function(req,res){
 
 
 app.listen(port, () => {
-    console.log(`Example app listening at http://api.2008.com:${port}`)
+    console.log(`Example app listening at http://localhost:${port}`)
 })
